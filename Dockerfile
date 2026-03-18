@@ -1,10 +1,4 @@
-# Purpose: Custom Docker image to inject config and run Rathole on Koyeb
-FROM rapiz1/rathole:latest
-
-WORKDIR /app
-COPY server.toml /app/server.toml
-
-EXPOSE 2333
-EXPOSE 8080
-
-CMD ["--server", "/app/server.toml"]
+docker run -d --name rathole-server \
+  -v $(pwd)/server.toml:/app/config.toml \
+  -p 2333:2333 -p 8080:8080 \
+  rapiz1/rathole --server /app/config.toml
