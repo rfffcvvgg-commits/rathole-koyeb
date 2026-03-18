@@ -1,7 +1,6 @@
-# Purpose: Rathole Server Configuration for Koyeb Deployment
 [server]
-bind_addr = "0.0.0.0:2333"
+bind_addr = "0.0.0.0:2333" # কন্ট্রোল চ্যানেলের পোর্ট
 
-[server.services.my_web_service]
-token = "game_changer_secret_token_100x"
-bind_addr = "0.0.0.0:8080"
+[server.services.my_web_app]
+token = "apnar_shokti_shali_token" # আগের আলোচনার সেই টোকেন
+bind_addr = "0.0.0.0:80" # ইন্টারনেটে এই পোর্টে আপনার ওয়েবসাইট দেখা যাবে
